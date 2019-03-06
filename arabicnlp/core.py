@@ -1,5 +1,5 @@
 def tokens(text):
-    return False
+    return []
 
 
 def lemmas(text):
