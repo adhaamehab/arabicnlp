@@ -1,12 +1,17 @@
+import re
+from .preprocessing import ArabicStemmer
+
+stemmer = ArabicStemmer()
+
 def tokens(text):
-    return []
+    r = re.compile(r'\w+|[^\w\s]+', re.UNICODE | re.MULTILINE | re.DOTALL)
+    return r.findall(text)
+
+def stem(text):
+    return [stemmer.stem(token) for token in tokens(text)]
 
 
-def lemmas(text):
-    return False
-
-
-def tags(text):
+def tags(text, model='LSTM'):
     return False
 
 
