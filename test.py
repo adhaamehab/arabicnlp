@@ -10,33 +10,23 @@ class IntegrationTest(unittest.TestCase):
 
     def test_tokens(self):
         """Tests for the tokenizer"""     
-        test =  "وقد تتكون النجوم في أزواج تدور حول بعضها البعض، مثال على ذلك نجده في نجم الشعرى اليمانية."
-       
-        correct = ["و","قد","تتكون","النجوم","في","أزواج","تدور","حول","بعضها","البعض","،","مثال"
-        ,"على","ذلك","نجده","في","نجم","الشعرى","اليمانية","."]
-        
-        self.__tokens_checker(test,correct)
+        cases = {
+         
+            "وقد تتكون النجوم في أزواج تدور حول بعضها البعض، مثال على ذلك نجده في نجم الشعرى اليمانية.":
+            ["و","قد","تتكون","النجوم","في","أزواج","تدور","حول","بعضها","البعض","،","مثال"
+        ,"على","ذلك","نجده","في","نجم","الشعرى","اليمانية","."],
 
-        test = "يبلغ عمر كوكب الأرض حوالي 4.54 مليار سنة (4.54 × 109 سنة ± 1%)."
-        
-        correct = ["عمر","الأرض","حوالي","4.54","مليار","سنة","(","4.54"
+        "يبلغ عمر كوكب الأرض حوالي 4.54 مليار سنة (4.54 × 109 سنة ± 1%).":
+        ["عمر","الأرض","حوالي","4.54","مليار","سنة","(","4.54"
         ,"×","109","سنة","±","1","%",")","."]
-        
-        self.__tokens_checker(test,correct)
+        }
 
-    def __tokens_checker(self,test_str,correct_tokens):
-        """
-        A helper method Checking if a string is tokenized correctly
-        
-        :pram test_str: The string to be checked.
-        :pram correct_tokens: A list of tokens that should be matched
-        with the result of tokenizing test_str
-        """
-        res = arabicnlp.tokens(test_str)
-        self.assertEqual(len(correct_tokens),len(res))
+        for case, correct in cases.items():
+            res = arabicnlp.tokens(case)
+            self.assertEqual(len(correct),len(res))
 
-        for i in range(len(correct_tokens)):
-             self.assertEqual(correct_tokens[i],res[i])
+            for i in range(len(correct)):
+                self.assertEqual(correct[i],res[i])
 
 
     def test_stemming(self):
