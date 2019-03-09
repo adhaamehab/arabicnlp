@@ -30,6 +30,15 @@ class IntegrationTest(unittest.TestCase):
 
 class UnitTest(unittest.TestCase):
     """Unit test here"""
+    def test_correction(self):
+        
+        result = []
+        cases= {'توصية' : 'تتتتتتتتوصية' , 'الهام' : 'الهم', 'املائية' : 'املاءية' }
+        for _, val in cases.items():
+            result.append(arabicnlp.correct(val))
+              
+        self.assertEqual(cases.keys(),result)
+
     def test_stemming(self):
         dictionary = {
             "فليكن عندك الشجاعة لتفعل بدلاً من أن تقوم برد فعل " : "فلك عند شجع فعل بدل من ان تقم برد فعل",
