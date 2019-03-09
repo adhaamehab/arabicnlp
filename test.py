@@ -30,7 +30,7 @@ class IntegrationTest(unittest.TestCase):
 
         for key, value in dictionary.items():
             result_list.append(self.__lemmas_checker(key, value))
-        return all(result_list)
+        return self.assertTrue(all(result_list), True)
             
     def __lemmas_checker(self, test_str, correct_string):
         """"
