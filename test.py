@@ -26,16 +26,20 @@ class IntegrationTest(unittest.TestCase):
             
         }
 
-        for x,y in dictionary.items():
-            self.lemmas_checker(x,y)
-        self.assertTrue(arabicnlp.stem(self.testtext))
+        result_list = []
 
-    def lemmas_checker(self,test_str,correct_string):
+        for key, value in dictionary.items():
+            result_list.append(self.__lemmas_checker(key, value))
+        return all(result_list)
+            
+    def __lemmas_checker(self, test_str, correct_string):
         """"
         Checking if the Algorithm's output matches the correctly initialzied values
         """
         result_string = arabicnlp.stem(test_str)
-        self.assertEqual(correct_string,result_string)
+        if result_string == correct_string:
+            return True
+        return False
 
 
     def test_tags(self):
