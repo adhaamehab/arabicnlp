@@ -11,7 +11,26 @@ class IntegrationTest(unittest.TestCase):
     def test_tokens(self):
         self.assertTrue(arabicnlp.tokens(self.testtext))
 
-    def test_lemmas(self):
+    def test_stemming(self):
+        self.assertTrue(arabicnlp.stem(self.testtext))
+
+
+    def test_tags(self):
+        self.assertTrue(arabicnlp.tags(self.testtext))
+
+    def test_spelling(self):
+        self.assertTrue(arabicnlp.correct(self.testtext))
+
+    def test_sentiment(self):
+        self.assertTrue(arabicnlp.sentiment(self.testtext))
+
+    def test_similarity(self):
+        self.assertTrue(arabicnlp.similarity(self.testtext, self.testtext))
+
+
+class UnitTest(unittest.TestCase):
+    """Unit test here"""
+    def test_stemming(self):
         dictionary = {
             "فليكن عندك الشجاعة لتفعل بدلاً من أن تقوم برد فعل " : "فلك عند شجع فعل بدل من ان تقم برد فعل",
             "محمود و مهاب اصحاب منذ الطفولة" : "حمد و هاب صحب منذ طفل",
@@ -40,24 +59,6 @@ class IntegrationTest(unittest.TestCase):
         if result_string == correct_string:
             return True
         return False
-
-
-    def test_tags(self):
-        self.assertTrue(arabicnlp.tags(self.testtext))
-
-    def test_spelling(self):
-        self.assertTrue(arabicnlp.correct(self.testtext))
-
-    def test_sentiment(self):
-        self.assertTrue(arabicnlp.sentiment(self.testtext))
-
-    def test_similarity(self):
-        self.assertTrue(arabicnlp.similarity(self.testtext, self.testtext))
-
-
-class UnitTest(unittest.TestCase):
-    """Unit test here"""
-    pass
 
 
 if __name__ == '__main__':
