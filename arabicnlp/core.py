@@ -1,6 +1,12 @@
 import re
 from .preprocessing import ArabicStemmer
 
+
+available_models = (
+    ('POST', 'LSTM'),
+    ('POST', 'NGRAM')
+)
+
 stemmer = ArabicStemmer()
 
 def tokens(text):
@@ -12,8 +18,7 @@ def stem(text):
 
 
 def tags(text, model='LSTM'):
-    return False
-
+    
 
 def correct(text):
     return False
@@ -25,3 +30,6 @@ def sentiment(text):
 
 def similarity(text1, text2):
     return False
+
+def download(name):
+    pass
