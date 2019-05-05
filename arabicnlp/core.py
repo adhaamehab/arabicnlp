@@ -30,6 +30,3 @@ def sentiment(text):
 
 def similarity(text1, text2):
     return False
-
-def download(name):
-    pass
