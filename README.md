@@ -4,6 +4,39 @@ Arabic NLP is a python package that provides an implementation for natural langu
 This projetc is an active project that aims to build a standard tool for more advanced nlp tasks.
 
 
+### Installation
+
+```shell
+pip install arabicnlp
+```
+
+### Usage
+
+```python
+from arabicnlp import tags, tokens, stem
+
+tags("العربية هي شبكة لنقل الاخبار و المعلومات و مقاطع الفيديو إلى عالم عبر عدة وسائط ، تشمل الانترنت و مواقع التواصل الاجتماعي")
+'''
+{'العربية': 'PART', 'هي': 'ADP', 'شبكة': 'PART', 'لنقل': 'NUM', 'الاخبار': 'SYM', 'و': 'ADP', 'المعلومات': 'SYM', 'مقاطع': 'NUM', 'الفيديو': 'SYM', 'إلى': 'NUM', 'عالم': 'NUM', 'عبر': 'ADP', 'عدة': 'ADP', 'وسائط': 'NUM', '،': 'SYM', 'تشمل': 'SYM', 'الانترنت': 'INTJ', 'مواقع': 'PART', 'التواصل': 'SYM', 'الاجتماعي': 'ADP'}
+'''
+
+tokens("العربية هي شبكة لنقل الاخبار و المعلومات و مقاطع الفيديو إلى عالم عبر عدة وسائط ، تشمل الانترنت و مواقع التواصل الاجتماعي")
+
+'''
+['العربية', 'هي', 'شبكة', 'لنقل', 'الاخبار', 'و', 'المعلومات', 'و', 'مقاطع', 'الفيديو', 'إلى', 'عالم', 'عبر', 'عدة', 'وسائط', '،', 'تشمل', 'الانترنت', 'و', 'مواقع', 'التواصل', 'الاجتماعي']
+'''
+
+stem("العربية هي شبكة لنقل الاخبار و المعلومات و مقاطع الفيديو إلى عالم عبر عدة وسائط ، تشمل الانترنت و مواقع التواصل الاجتماعي")
+
+'''
+['عرب', 'هي', 'شبك', 'لنقل', 'اخبار', 'و', 'معلوم', 'و', 'مقاطع', 'فيديو', 'الى', 'عالم', 'عبر', 'عد', 'سايط', '', 'تشمل', 'انتر', 'و', 'مواقع', 'تواصل', 'اجتماع']
+'''
+
+
+```
+
+
+
 ### arabicnlp
 
 - Arabicnlp is a natural language processing package for python developer 
@@ -12,6 +45,7 @@ This projetc is an active project that aims to build a standard tool for more ad
     * Tokenization.
     * Stemming and lemmatization.
     * Part-of-speech tagger
+
 
 
 ### Known issue
