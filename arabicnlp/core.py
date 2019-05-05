@@ -18,6 +18,7 @@ def stem(text):
 
 
 def tags(text, model='LSTM'):
+    return []
     
 
 def correct(text):

@@ -117,3 +117,5 @@ dmypy.json
 
 .vscode/
 data/
+*.ipynb_checkpoints
+*.ipynb

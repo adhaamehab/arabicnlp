@@ -12,17 +12,20 @@ This projetc is an active project that aims to build a standard tool for more ad
     * Tokenization.
     * Stemming and lemmatization.
     * Part-of-speech tagger
-    * Sentiment analysis
+
+
+### Known issue
+
+- [tagger] Randomly some words that exists in word2index get msilabeled as `-PAD-` 
 
 
 ## Blogs
 
 - [Building the project](https://adhaamehab.me/2019/02/01/gp-docs.html)
-- [Text representation and similarity](https://adhaamehab.me/2019/02/15/text-representation.html)
-- [Building an arabic part-of-speech based on sequence modeling](https://adhaamehab.me/2019/03/03/pos-tagger-sequence-modeling.html)
+- [Building an arabic part-of-speech based on sequence modeling](https://towardsdatascience.com/deep-learning-for-arabic-part-of-speech-tagging-810be7278353)
 
 ### Contact
-- [@adhaamehab](http://github.com/adhaamehab)  [adhaamehab7@gmail.com](mailto:adhaamehab7@gmail.com)
+- [@adhaamehab](http://github.com/adhaamehab) 
 
 ## LICENSE
 

@@ -5,10 +5,8 @@ language: python
 
 python:
   - "3.6"
-  - "3.5"
-  - "pypy"
 
 install:
   - pip install -U .
 
-script: python run_tests.py
+script: python tests.py
