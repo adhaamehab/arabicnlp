@@ -4,6 +4,12 @@ Arabic NLP is a python package that provides an implementation for natural langu
 This projetc is an active project that aims to build a standard tool for more advanced nlp tasks.
 
 
+### Installation
+
+```shell
+pip install arabicnlp
+```
+
 ### arabicnlp
 
 - Arabicnlp is a natural language processing package for python developer 
@@ -12,6 +18,7 @@ This projetc is an active project that aims to build a standard tool for more ad
     * Tokenization.
     * Stemming and lemmatization.
     * Part-of-speech tagger
+
 
 
 ### Known issue
