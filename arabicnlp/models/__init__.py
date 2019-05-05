@@ -1,1 +1,1 @@
-from .pos_tagger.py import tags
+from .pos_tagger import tags

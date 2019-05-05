@@ -63,6 +63,8 @@ def _tokens(text):
 
 
 model = load_model('models/post_lstm_march_2019_.h5', custom_objects={'ignore_accuracy': _ignore_class_accuracy()})
+global graph
+graph = tf.get_default_graph() 
 
 word2index = pickle.load(open('models/word2index.bin', 'rb'))
 tag2index = pickle.load(open('models/tag2index.bin', 'rb'))
@@ -78,16 +80,3 @@ def tags( sentence):
             break
         result[value] = pre_result[idx]
     return result
-
-'''
-load word2index
-load tag2index
-_MAX_LENGTH = 398
-seq = str to seq
-preres = predict(seq)
-res = logits_to_tokens(predictions, {i: t for t, i in tag2index.items()})
-
-for idx, value in enumerate(tokens(inp)):
-    print(value,' : ' , res[0][idx])
-
-'''

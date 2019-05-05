@@ -5,7 +5,6 @@ setup(
     version='0.1.0',
     description="Python package for arabic NLP",
     long_description="Python package for processing arabic language with features like sentiment analysis and part-of-speech tagging",
-
     # The project URL.
     url='https://github.com/adhaamehab/arabicnlp',
 
@@ -23,4 +22,5 @@ setup(
          'Programming Language :: Python :: 3.6',
     ],
     packages=find_packages(),
+    include_package_data=True
 )

@@ -1,10 +1,9 @@
 import re
 from .preprocessing import ArabicStemmer
-
+from .models import tags as _tags
 
 available_models = (
-    ('POST', 'LSTM'),
-    ('POST', 'NGRAM')
+    ('POST', 'LSTM')
 )
 
 stemmer = ArabicStemmer()
@@ -17,8 +16,8 @@ def stem(text):
     return [stemmer.stem(token) for token in tokens(text)]
 
 
-def tags(text, model='LSTM'):
-    return []
+def tags(text):
+    return _tags(text)
     
 
 def correct(text):
