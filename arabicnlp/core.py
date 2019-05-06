@@ -12,7 +12,7 @@ def tokens(text):
     r = re.compile(r'\w+|[^\w\s]+', re.UNICODE | re.MULTILINE | re.DOTALL)
     return r.findall(text)
 
-def stem(text):
+def stems(text):
     return [stemmer.stem(token) for token in tokens(text)]
 
 
