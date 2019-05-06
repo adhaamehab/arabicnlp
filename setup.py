@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="arabicnlp",
-    version='0.1.2',
+    version='0.1.3',
     description="Python package for arabic NLP",
     long_description="Python package for processing arabic language with features like sentiment analysis and part-of-speech tagging",
     # The project URL.
