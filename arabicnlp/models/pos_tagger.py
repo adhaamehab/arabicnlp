@@ -7,11 +7,12 @@ from itertools import chain
 from pickle import loads
 import keras
 import numpy as np
-import pandas as pd
 from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
+from os import path
+from pathlib import Path
 
 tf.logging.set_verbosity(tf.logging.ERROR)
 
@@ -61,13 +62,14 @@ def _tokens(text):
     r = re.compile(r'\w+|[^\w\s]+', re.UNICODE | re.MULTILINE | re.DOTALL)
     return r.findall(text)
 
+here = Path(__file__).parent.parent.parent
 
-model = load_model('models/post_lstm_march_2019_.h5', custom_objects={'ignore_accuracy': _ignore_class_accuracy()})
+model = load_model(path.join(here, 'models/post_lstm_march_2019_.h5'), custom_objects={'ignore_accuracy': _ignore_class_accuracy()})
 global graph
 graph = tf.get_default_graph() 
 
-word2index = pickle.load(open('models/word2index.bin', 'rb'))
-tag2index = pickle.load(open('models/tag2index.bin', 'rb'))
+word2index = pickle.load(open(path.join(here,'models/word2index.bin'), 'rb'))
+tag2index = pickle.load(open(path.join(here, 'models/tag2index.bin'), 'rb'))
 _MAX_LENGTH = 398 # check the training article
 
 
