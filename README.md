@@ -1,10 +1,11 @@
 ## Arabic Natural Language Processing 
 
+[![Build Status](https://travis-ci.com/adhaamehab/arabicnlp.svg?branch=develop)](https://travis-ci.com/adhaamehab/arabicnlp)
+
 Arabic NLP is a python package that provides an implementation for natural language processing tasks for arabic language such as part-of-speech tagging, sentiment analysis, text similarity and more.
 This projetc is an active project that aims to build a standard tool for more advanced nlp tasks.
 
 
-![books](./imgs/cover.jpeg)
 ### Installation
 
 ```shell
@@ -27,7 +28,7 @@ tokens("العربية هي شبكة لنقل الاخبار و المعلوما
 ['العربية', 'هي', 'شبكة', 'لنقل', 'الاخبار', 'و', 'المعلومات', 'و', 'مقاطع', 'الفيديو', 'إلى', 'عالم', 'عبر', 'عدة', 'وسائط', '،', 'تشمل', 'الانترنت', 'و', 'مواقع', 'التواصل', 'الاجتماعي']
 '''
 
-stems("العربية هي شبكة لنقل الاخبار و المعلومات و مقاطع الفيديو إلى عالم عبر عدة وسائط ، تشمل الانترنت و مواقع التواصل الاجتماعي")
+stem("العربية هي شبكة لنقل الاخبار و المعلومات و مقاطع الفيديو إلى عالم عبر عدة وسائط ، تشمل الانترنت و مواقع التواصل الاجتماعي")
 
 '''
 ['عرب', 'هي', 'شبك', 'لنقل', 'اخبار', 'و', 'معلوم', 'و', 'مقاطع', 'فيديو', 'الى', 'عالم', 'عبر', 'عد', 'سايط', '', 'تشمل', 'انتر', 'و', 'مواقع', 'تواصل', 'اجتماع']
