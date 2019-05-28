@@ -2,18 +2,18 @@
 
 import pickle
 import re
-import numpy as np
 from itertools import chain
+from os import path
 from pickle import loads
+import pkg_resources
+
 import keras
 import numpy as np
-import pandas as pd
+import tensorflow as tf
 from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
-import tensorflow as tf
 
-tf.logging.set_verbosity(tf.logging.ERROR)
 
 def _ignore_class_accuracy(to_ignore=0):
     def ignore_accuracy(y_true, y_pred):
@@ -61,13 +61,24 @@ def _tokens(text):
     r = re.compile(r'\w+|[^\w\s]+', re.UNICODE | re.MULTILINE | re.DOTALL)
     return r.findall(text)
 
+this_dir, this_filename = path.split(__file__)
+MODEL_PATH = path.join(this_dir, "data", "post_lstm_march_2019_.h5")
+WORDINDEX_PATH = path.join(this_dir, "data", "word2index.bin")
+TAGINDEX_PATH = path.join(this_dir, "data", "tag2index.bin")
 
-model = load_model('models/post_lstm_march_2019_.h5', custom_objects={'ignore_accuracy': _ignore_class_accuracy()})
+
+model = load_model(MODEL_PATH, custom_objects={'ignore_accuracy': _ignore_class_accuracy()})
 global graph
 graph = tf.get_default_graph() 
 
-word2index = pickle.load(open('models/word2index.bin', 'rb'))
-tag2index = pickle.load(open('models/tag2index.bin', 'rb'))
+with open(WORDINDEX_PATH, 'rb') as f:
+    word2index = pickle.load(f)
+
+with open(TAGINDEX_PATH, 'rb') as f:
+    tag2index = pickle.load(f)
+
+
+
 _MAX_LENGTH = 398 # check the training article
 
 

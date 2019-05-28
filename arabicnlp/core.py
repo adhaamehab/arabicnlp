@@ -1,6 +1,6 @@
 import re
-from .preprocessing import ArabicStemmer
-from .models import tags as _tags
+from .stemmer import ArabicStemmer
+from .pos_tagger import tags as _tags
 
 available_models = (
     ('POST', 'LSTM')
@@ -12,7 +12,7 @@ def tokens(text):
     r = re.compile(r'\w+|[^\w\s]+', re.UNICODE | re.MULTILINE | re.DOTALL)
     return r.findall(text)
 
-def stem(text):
+def stems(text):
     return [stemmer.stem(token) for token in tokens(text)]
 
 
