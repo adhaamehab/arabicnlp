@@ -1,1 +1,0 @@
-from .pos_tagger import tags

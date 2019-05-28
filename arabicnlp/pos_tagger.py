@@ -14,7 +14,6 @@ from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
 
-tf.logging.set_verbosity(tf.logging.ERROR)
 
 def _ignore_class_accuracy(to_ignore=0):
     def ignore_accuracy(y_true, y_pred):
@@ -72,8 +71,14 @@ model = load_model(MODEL_PATH, custom_objects={'ignore_accuracy': _ignore_class_
 global graph
 graph = tf.get_default_graph() 
 
-word2index = pickle.load(WORDINDEX_PATH, 'rb')
-tag2index = pickle.load(TAGINDEX_PATH, 'rb')
+with open(WORDINDEX_PATH, 'rb') as f:
+    word2index = pickle.load(f)
+
+with open(TAGINDEX_PATH, 'rb') as f:
+    tag2index = pickle.load(f)
+
+
+
 _MAX_LENGTH = 398 # check the training article
 
 
