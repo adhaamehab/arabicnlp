@@ -1,6 +1,6 @@
 import re
-from .preprocessing import ArabicStemmer
-from .models import tags as _tags
+from .stemmer import ArabicStemmer
+from .pos_tagger import tags as _tags
 
 available_models = (
     ('POST', 'LSTM')
