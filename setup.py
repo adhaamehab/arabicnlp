@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="arabicnlp",
-    version='0.1.3',
+    version='0.1.6',
     description="Python package for arabic NLP",
     long_description="Python package for processing arabic language with features like sentiment analysis and part-of-speech tagging",
     # The project URL.
@@ -26,5 +26,9 @@ setup(
         'keras',
         'tensorflow'
     ],
-    include_package_data=True
+    include_package_data=True,
+    package_data={
+        '': ['*.h5', '*.bin'],
+        'data': ['*.h5', '*.bin']
+    }
 )
