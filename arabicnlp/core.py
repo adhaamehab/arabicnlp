@@ -1,6 +1,7 @@
 import re
 from .stemmer import ArabicStemmer
 from .pos_tagger import tags as _tags
+from .correction import spell_checker
 
 available_models = (
     ('POST', 'LSTM')
@@ -20,8 +21,10 @@ def tags(text):
     return _tags(text)
     
 
-def correct(text):
-    return False
+def correct(text, top=False):
+    words = tokens(text)
+    result = {w: spell_checker.correction(w, top) for w in words}
+    return result
 
 
 def sentiment(text):
