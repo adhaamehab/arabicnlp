@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="arabicnlp",
-    version='0.1.6',
+    version='0.1.7',
     description="Python package for arabic NLP",
-    long_description="Python package for processing arabic language with features like sentiment analysis and part-of-speech tagging",
+    long_description="Python package for processing arabic language and the backbone of texblob-ar\nFeatuers:\n-POS tagger\n-Tokenization\n-Stemming\n-Spelling correction",
     # The project URL.
     url='https://github.com/adhaamehab/arabicnlp',
 
@@ -18,7 +18,6 @@ setup(
          'Natural Language :: English',
          'License :: OSI Approved :: MIT License',
          'Programming Language :: Python',
-         'Programming Language :: Python :: 2.7',
          'Programming Language :: Python :: 3.6',
     ],
     packages=find_packages(),
